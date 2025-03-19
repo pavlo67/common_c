@@ -1,0 +1,70 @@
+# CMake & IDE files
+build/*
+cmake-build-debug/*
+cmake-build-release/*
+.idea/*
+.vscode/*
+
+# Data files
+*.jlist
+*.pdf
+*.PDF
+*.png
+*.PNG
+*.bmp
+*.BMP
+*.tif
+*.TIF
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.gif
+*.GIF
+*.mp3
+*.MP3
+*.mp4
+*.MP4
+*.mpg
+*.MPG
+*.zip
+*.ZIP
+*.csv
+*.CSV
+*.7z
+*.7Z
+*.pgm
+
+# Log files & reports
+*.xls*
+*.log*
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.bin
+*.test
+
+
