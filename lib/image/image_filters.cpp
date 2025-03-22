@@ -1,32 +1,5 @@
 #include "image.h"
 
-//void accent_grayscale(const Mat* src, Mat *dst) {
-//    if (src == nullptr) {
-//        printf("accent(): src is NULL\n");
-//        return;
-//    } else if (src->type() != CV_8UC1) {
-//        printf("accent(): src type is not CV_8UC1\n");
-//        return;
-//    } else if (dst == nullptr) {
-//        printf("accent(): dst == nullptr\n");
-//        return;
-//    }
-//
-//    dst->create(src->rows, src->cols, CV_8UC1);
-//    uchar *pix_max = src->data + src->rows * src->cols;
-//
-//    uchar p_max = 0;
-//    for (uchar *pix = src->data; pix < pix_max; pix++) {
-//        if (*pix > p_max) p_max = *pix;
-//    }
-//
-//    float v_max = p_max;
-//    for (uchar *pix = src->data; pix < pix_max; pix++) {
-//        // TODO??? use integer operations only:  uchar((255 * uint16_t(*pix)) / (uint16_t)p_max))
-//        *(dst->data + (pix - src->data)) = uchar(std::round(255 * (float(*pix) / v_max) * (float(*pix) / v_max)));
-//    }
-//}
-
 void narrow_range_bw(const Mat& src, Mat& dst, uint8_t range) {
     if (src.type() != CV_8UC1) {
         throw std::runtime_error("narrow_range_bw(): src type (" + std::to_string(src.type()) + ") is not CV_8UC1");

@@ -1,12 +1,11 @@
 #include <cstdint>
 #include <cstdio>
 #include <string>
-
-#include "lib/math/plane.h"
+#include <assert.h>
 
 int main(int argc, char *argv[]) {
 
-    printf("+++%s---\n");
+    assert(false && "A is not equal to B");
 
 
     // double fov_x_width_2  = 320;

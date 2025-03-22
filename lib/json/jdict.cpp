@@ -1,9 +1,6 @@
-#include "jsoncpp/json/json.h"
-
 #include "lib/helpers/filelib.h"
 
 #include "jdict.h"
-
 
 const std::string KEY_DELIMITER = "::";
 
@@ -18,7 +15,7 @@ bool jdict_read(const std::string& filename, const std::string& key, Json::Value
                 if (reader.parse(line.substr(pos + KEY_DELIMITER.length()), jv)) {
                     return true;
                 }
-                printf(("jdict_read(): " + reader.getFormattedErrorMessages()).c_str());
+                printf("jdict_read(): %s\n", reader.getFormattedErrorMessages().c_str());
             }
         }
     }
