@@ -35,7 +35,7 @@ public:
     Timing();
     void        add(moment started_at);
     timing_stat get();
-    void        show(const std::string& label);
+    void        show(const std::string& label, FILE* f_log = nullptr);
 
 private:
     int32_t  cnt_;

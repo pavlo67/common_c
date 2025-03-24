@@ -51,7 +51,6 @@ void Timing::add(moment started_at) {
 
 timing_stat Timing::get() {
     timing_stat stat = {cnt_,  min_num_, max_num_,min_, max_,  0};
-
     if (cnt_ > 0) {
         stat.avg = sum_ / static_cast<duration>(cnt_);
     }
@@ -59,14 +58,15 @@ timing_stat Timing::get() {
     return stat;
 }
 
-void Timing::show(const std::string& label) {
+const char* SHOW_LABEL = "timing/%s: cnt = %6d, avg = %8llu us, max = %8llu us, min = %8llu us\n";
+
+void Timing::show(const std::string& label, FILE* f_log) {
     timing_stat s = get();
-    printf((label + " timing: cnt = %6d, avg = %8d us, max = %8d us, min = %8d us\n").c_str(),
-        s.cnt, s.avg / MICROSECOND, s.max / MICROSECOND, s.min / MICROSECOND);
+    printf(SHOW_LABEL, label.c_str(), s.cnt, s.avg / MICROSECOND, s.max / MICROSECOND, s.min / MICROSECOND);
+    if (f_log) {
+        fprintf(f_log, SHOW_LABEL, label.c_str(), s.cnt, s.avg / MICROSECOND, s.max / MICROSECOND, s.min / MICROSECOND);
+    }
 }
-
-
-
 
 
 //
