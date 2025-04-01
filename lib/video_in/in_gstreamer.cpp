@@ -12,7 +12,12 @@ VideoIn::VideoIn(const char* path, int width, int height, bool grayscale) {
    grayscale_ = grayscale;
 
    printf("CAPTURING %s...\n", path);
-   cap = VideoCapture(path);
+
+   if (path) {
+      cap = VideoCapture(path);
+   } else {
+      cap = VideoCapture(0);
+   }
    if (!cap.isOpened()) {
       throw std::runtime_error("Cannot open video: " + std::string(path));
    }
