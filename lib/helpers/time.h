@@ -13,6 +13,7 @@ const duration NANOSECOND  = 1;
 const duration MICROSECOND = 1e3;
 const duration MILLISECOND = 1e6;
 const duration SECOND      = 1e9;
+const duration MINUTE      = SECOND * 60;
 
 std::string custom_time(time_t t);
 moment      now();
